@@ -1,22 +1,40 @@
-# Linked List Library
+# Data Structure Library
 
-This library provides an implementation of a simple and double linked list in Go.
+This library provides an implementation of various data structures in Go, including a simple and double linked list,
+stack, queue, tree, graph and hashmap. These data structures can be used to perform various operations such as
+insertion, deletion, searching and sorting efficiently.
 
 ## Features
-- Append a value to the end of the list
-- Prepend a value to the beginning of the list
-- Insert a value after a specific node
-- Delete a specific node
-- Traverse the list and return all the values in the list
-- Return the size of the list
-- Find a specific node in the list based on its value
-- Reverse the list
-- Sort the list using quicksort or merge sort
-- Merge two lists
+
+- Simple and double linked list with Append, Prepend, InsertAfter and DeleteNode methods
+- Stack with Push, Pop, Peek and Size methods
+- Queue
+- Tree
+- Graph
+- Hashmap
 
 ## Usage
-To use this library in your project, import the `linkedlist` package and create a new list with `NewLinkedList(isDouble bool)` function.
-```go
-import "linkedlist"
+
+To use this library in your project, import the desired package and create a new instance of the data structure.
+
+For Linkedlist:
+
+````
+import "github.com/username/data-structure-lib/linkedlist"
 
 list := linkedlist.NewLinkedList(true)
+list.Append(1)
+list.Append(2)
+list.Prepend(0)
+````
+
+For Stack:
+
+````
+import "github.com/username/data-structure-lib/stack"
+
+stack := stack.NewStack()
+stack.Push(1)
+stack.Push(2)
+val, _ := stack.Pop()
+````
