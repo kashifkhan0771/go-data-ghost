@@ -1,80 +1,79 @@
 # go-data-ghost
-
-A library for various data structures in Go.
-
+A collection of popular data structures implemented in Go for use as a library.
 ## Installation
 
-```bash
+```sh
 go get github.com/kashifkhan0771/go-data-ghost
-````
-
-## Features
-
-- Simple and double linked list with Append, Prepend, InsertAfter and DeleteNode methods
-- Stack with Push, Pop, Peek and Size methods
-- Queue with Enqueue, Dequeue, Peek and Size methods
-- Tree with Insert, Search, InOrderTraversal, PreOrderTraversal, PostOrderTraversal, Delete, Minimum, Maximum, Size and Clear methods
-- Graph
-- Hashmap
-
+```
 ## Usage
-
-To use this library in your project, import the desired package and create a new instance of the data structure.
-
-For Linkedlist:
-
-````
-import "github.com/kashifkhan0771/go-data-ghost/linkedlist"
-
-list := linkedlist.NewLinkedList(true)
-list.Append(1)
-list.Append(2)
-list.Prepend(0)
-````
-
-For Stack:
-````
-import "github.com/kashifkhan0771/go-data-ghost/stack"
-
-stack := stack.NewStack()
-stack.Push(1)
-stack.Push(2)
-val, _ := stack.Pop()
-````
-
-For Queue
-````
-import "github.com/kashifkhan0771/go-data-ghost/queue"
-
-queue := queue.NewQueue()
-queue.Enqueue(1)
-queue.Enqueue(2)
-val, _ := queue.Dequeue()
-````
-
-For Tree
 ````
 package main
 
 import (
-    "fmt"
-    "github.com/kashifkhan0771/go-data-ghost/tree"
+"fmt"
+"github.com/kashifkhan0771/go-data-ghost/linkedlist"
+"github.com/kashifkhan0771/go-data-ghost/stack"
+"github.com/kashifkhan0771/go-data-ghost/queue"
+"github.com/kashifkhan0771/go-data-ghost/tree"
+"github.com/kashifkhan0771/go-data-ghost/graph"
 )
 
 func main() {
+// Linked List usage
+list := linkedlist.NewLinkedList(true)
+list.Append(1)
+list.Append(2)
+list.Append(3)
+fmt.Println(list)
+
+    // Stack usage
+    s := stack.NewStack()
+    s.Push(1)
+    s.Push(2)
+    s.Push(3)
+    fmt.Println(s.Pop())
+    fmt.Println(s.Pop())
+    fmt.Println(s.Pop())
+
+    // Queue usage
+    q := queue.NewQueue()
+    q.Enqueue(1)
+    q.Enqueue(2)
+    q.Enqueue(3)
+    fmt.Println(q.Dequeue())
+    fmt.Println(q.Dequeue())
+    fmt.Println(q.Dequeue())
+
+    // Tree usage
     t := tree.NewTree()
     t.Insert(10)
     t.Insert(5)
     t.Insert(15)
-    t.Insert(2)
-    t.Insert(7)
-    t.Insert(12)
-    t.Insert(20)
-    fmt.Println(t.Minimum()) // 2
-    fmt.Println(t.Maximum()) // 20
+    fmt.Println(t.Minimum())
+    fmt.Println(t.Maximum())
     t.Delete(5)
-    fmt.Println(t.Size()) // 6
+    fmt.Println(t.Size())
     t.Clear()
-    fmt.Println(t.Size()) // 0
+    fmt.Println(t.Size())
+
+    // Graph usage - Undirected
+    g := graph.NewGraph()
+    g.AddVertex("A")
+    g.AddVertex("B")
+    g.AddVertex("C")
+    g.AddEdge("A", "B")
+    g.AddEdge("B", "C")
+    fmt.Println(g.BreadthFirstSearch("A"))
+    fmt.Println(g.DepthFirstSearch("A"))
+
+    // Directed Graph usage
+    dg := graph.NewDirectedGraph()
+    dg.AddVertex("A")
+    dg.AddVertex("B")
+    dg.AddVertex("C")
+    dg.AddEdge("A", "B")
+    dg.AddEdge("B", "C")
+    fmt.Println(dg.BreadthFirstSearch("A"))
+    fmt.Println(dg.DepthFirstSearch("A"))
 }
 ````
