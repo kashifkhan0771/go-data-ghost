@@ -1,15 +1,19 @@
-# Data Structure Library
+# go-data-ghost
 
-This library provides an implementation of various data structures in Go, including a simple and double linked list,
-stack, queue, tree, graph and hashmap. These data structures can be used to perform various operations such as
-insertion, deletion, searching and sorting efficiently.
+A library for various data structures in Go.
+
+## Installation
+
+```bash
+go get github.com/kashifkhan0771/go-data-ghost
+````
 
 ## Features
 
 - Simple and double linked list with Append, Prepend, InsertAfter and DeleteNode methods
 - Stack with Push, Pop, Peek and Size methods
 - Queue with Enqueue, Dequeue, Peek and Size methods
-- Tree
+- Tree with Insert, Search, InOrderTraversal, PreOrderTraversal, PostOrderTraversal, Delete, Minimum, Maximum, Size and Clear methods
 - Graph
 - Hashmap
 
@@ -46,4 +50,31 @@ queue := queue.NewQueue()
 queue.Enqueue(1)
 queue.Enqueue(2)
 val, _ := queue.Dequeue()
+````
+
+For Tree
+````
+package main
+
+import (
+    "fmt"
+    "github.com/kashifkhan0771/go-data-ghost/tree"
+)
+
+func main() {
+    t := tree.NewTree()
+    t.Insert(10)
+    t.Insert(5)
+    t.Insert(15)
+    t.Insert(2)
+    t.Insert(7)
+    t.Insert(12)
+    t.Insert(20)
+    fmt.Println(t.Minimum()) // 2
+    fmt.Println(t.Maximum()) // 20
+    t.Delete(5)
+    fmt.Println(t.Size()) // 6
+    t.Clear()
+    fmt.Println(t.Size()) // 0
+}
 ````
