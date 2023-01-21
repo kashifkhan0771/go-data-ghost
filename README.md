@@ -8,7 +8,7 @@ insertion, deletion, searching and sorting efficiently.
 
 - Simple and double linked list with Append, Prepend, InsertAfter and DeleteNode methods
 - Stack with Push, Pop, Peek and Size methods
-- Queue
+- Queue with Enqueue, Dequeue, Peek and Size methods
 - Tree
 - Graph
 - Hashmap
@@ -20,7 +20,7 @@ To use this library in your project, import the desired package and create a new
 For Linkedlist:
 
 ````
-import "github.com/username/data-structure-lib/linkedlist"
+import "github.com/kashifkhan0771/go-data-ghost/linkedlist"
 
 list := linkedlist.NewLinkedList(true)
 list.Append(1)
@@ -29,12 +29,21 @@ list.Prepend(0)
 ````
 
 For Stack:
-
 ````
-import "github.com/username/data-structure-lib/stack"
+import "github.com/kashifkhan0771/go-data-ghost/stack"
 
 stack := stack.NewStack()
 stack.Push(1)
 stack.Push(2)
 val, _ := stack.Pop()
+````
+
+For Queue
+````
+import "github.com/kashifkhan0771/go-data-ghost/queue"
+
+queue := queue.NewQueue()
+queue.Enqueue(1)
+queue.Enqueue(2)
+val, _ := queue.Dequeue()
 ````
