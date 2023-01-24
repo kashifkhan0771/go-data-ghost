@@ -160,7 +160,7 @@ package main
 
 import (
 	"fmt"
-	"go-data-ghost/set"
+	"github.com/kashifkhan0771/go-data-ghost/set"
 )
 
 func main() {
