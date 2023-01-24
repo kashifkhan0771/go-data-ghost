@@ -1,6 +1,6 @@
 # go-data-ghost
 
-A Go library for commonly used data structures, including linked list, stack, queue, tree, graph, hashmap. This library aims to provide a simple and efficient implementation of these data structures for use in various Go projects.
+A Go library for commonly used data structures, including linked list, stack, queue, tree, graph, hashmap, and set. This library aims to provide a simple and efficient implementation of these data structures for use in various Go projects.
 ## Installation
 
 There are several ways to install the go-data-ghost library.
@@ -151,6 +151,39 @@ fmt.Println("Size:", h.Len())
 fmt.Println("Load Factor:", h.LoadFactor())
 fmt.Println("Keys:", h.Keys())
 fmt.Println("Values:", h.Values())
+}
+````
+
+## Set
+````
+package main
+
+import (
+	"fmt"
+	"go-data-ghost/set"
+)
+
+func main() {
+	s := set.NewSet()
+	s.Add("apple")
+	s.Add("banana")
+	s.Add("orange")
+	s.Add("apple") // duplicate, will not be added
+	
+	fmt.Println("Size of set: ", s.Size())
+	// Output: Size of set:  3
+	
+	fmt.Println("Set contains apple: ", s.Contains("apple"))
+	// Output: Set contains apple:  true
+	
+	s.Remove("banana")
+	
+	fmt.Println("Size of set after removing banana: ", s.Size())
+	// Output: Size of set after removing banana:  2
+	
+	s.Clear()
+	fmt.Println("Size of set after clear: ", s.Size())
+	// Output: Size of set after clear:  0
 }
 ````
 
